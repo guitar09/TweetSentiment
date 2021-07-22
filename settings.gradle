@@ -1,0 +1,5 @@
+include ':core'
+include ':usertwitter'
+include ':sentimentanalyze'
+include ':app'
+rootProject.name = "TweetSentiment"

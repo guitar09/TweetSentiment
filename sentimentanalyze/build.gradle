@@ -1,0 +1,71 @@
+import com.higor.tweetsentiment.Libs
+import com.higor.tweetsentiment.Versions
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion Versions.BuildConfig.COMPILE_SDK_VERSION
+    buildToolsVersion Versions.BuildConfig.BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion Versions.BuildConfig.MIN_VERSION
+        targetSdkVersion Versions.BuildConfig.TARGET_VERSION
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+}
+
+dependencies {
+
+    implementation Libs.Android.KOTLIN_STDLIB
+    implementation Libs.Android.CORE_KTX
+    implementation Libs.Android.APP_COMPAT
+    implementation Libs.Android.MATERIAL_COMPONENT
+    implementation Libs.Android.CONSTRAINT_LAYOUT
+
+    testImplementation Libs.Test.JUNIT
+    testImplementation Libs.Test.EXT_JUNIT
+    testImplementation Libs.Test.ESPRESSO_CORE
+    testImplementation Libs.Test.KOIN_TEST
+    testImplementation Libs.Test.ROBOLECTRIC
+    testImplementation Libs.Test.MOCKK
+    testImplementation Libs.Test.TRUTH
+    testImplementation Libs.Test.ANDROID_TEST_CORE
+    testImplementation Libs.Test.ARCH_CORE_TEST
+    testImplementation Libs.Test.COROUTINE_TEST
+
+    implementation Libs.DependencyInject.KOIN_ANDROID
+    implementation Libs.DependencyInject.KOIN_CORE
+    implementation Libs.DependencyInject.KOIN_VIEWMODEL
+    implementation Libs.Network.RETROFIT
+    implementation Libs.Network.RETROFIT_ADAPTER_GSON
+
+    implementation project(':core')
+    //testImplementation project(':core')
+}

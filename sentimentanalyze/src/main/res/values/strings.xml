@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name_feature_analyze">SentimentAnalyze</string>
+    <string name="message_error">Aconteceu um problema, tente novamente.</string>
+    <string name="internet_error">Verifique sua conexão com a internet, tente novamente</string>
+    <string name="ops">Oooppppssss\nAlgo deu errado, tente novamente :)</string>
+</resources>

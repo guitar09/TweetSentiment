@@ -1,0 +1,61 @@
+import com.higor.tweetsentiment.Libs
+import com.higor.tweetsentiment.Versions
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion Versions.BuildConfig.COMPILE_SDK_VERSION
+    buildToolsVersion Versions.BuildConfig.BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion Versions.BuildConfig.MIN_VERSION
+        targetSdkVersion Versions.BuildConfig.TARGET_VERSION
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation Libs.Android.KOTLIN_STDLIB
+    implementation Libs.Android.CORE_KTX
+    implementation Libs.Android.APP_COMPAT
+    implementation Libs.Android.MATERIAL_COMPONENT
+    implementation Libs.Android.CONSTRAINT_LAYOUT
+
+
+    testImplementation Libs.Test.JUNIT
+    testImplementation Libs.Test.EXT_JUNIT
+    testImplementation Libs.Test.ESPRESSO_CORE
+    implementation Libs.Test.KOIN_TEST
+    implementation Libs.Test.ROBOLECTRIC
+    implementation Libs.Test.MOCKK
+
+    implementation Libs.Android.LIVE_CYCLE_VIEWMODEL
+    implementation Libs.Android.LIVE_CYCLE_LIVEDATA
+    implementation Libs.Android.LIVE_CYCLE_RUNTIME
+    implementation Libs.Network.RETROFIT
+    implementation Libs.Network.RETROFIT_ADAPTER_GSON
+    implementation Libs.Network.OK_HTTP
+    implementation Libs.Network.OK_HTTP_LOGGING
+}

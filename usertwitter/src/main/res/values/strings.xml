@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name_feature_user_twitter">UserTwitter</string>
+    <string name="name_user_search">Digite o nome do usuário no Twitter</string>
+    <string name="user">Usuário</string>
+    <string name="search">Pesquisar</string>
+    <string name="empty_text">Nada a Exibir</string>
+    <string name="user_not_found">Usuário não encontrado</string>
+    <string name="generic_error">Aconteceu um problema, tente novamente</string>
+    <string name="internet_error">Verifique sua conexão com a internet, tente novamente</string>
+</resources>

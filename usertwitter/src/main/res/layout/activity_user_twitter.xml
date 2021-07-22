@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_ui">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTweet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/font_size_80"/>
+
+        <ProgressBar
+            android:id="@+id/prbTweet"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/include_empty_list"
+            android:layout_gravity="center" />
+
+
+    </FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        app:layout_anchorGravity="top|right"
+        android:layout_marginRight="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_24"
+        android:text="@string/search"
+        app:backgroundTint="@color/colorAccent"
+        android:textColor="@android:color/white"
+        app:icon="@drawable/ic_baseline_search_24"
+        app:iconTint="@android:color/white"
+        app:layout_behavior="com.higor.core.utils.ScrollAwareFABBehavior">
+
+    </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
