@@ -76,6 +76,15 @@ internal class UserTwitterActivity : BaseActivity(), TweetListAdapter.OnClickIte
         adapter.submitList(tweets)
     }
 
+    private fun clearList() {
+        adapter.submitList(listOf())
+    }
+
+    private fun setUpError() {
+        clearList()
+        showEmptyView(true)
+    }
+
     private fun configObservers() {
 
         tweetViewModel.getTweetsLiveDate.observe(this, Observer { status ->
@@ -92,7 +101,7 @@ internal class UserTwitterActivity : BaseActivity(), TweetListAdapter.OnClickIte
                 }
 
                 is ErrorState -> {
-                    showEmptyView(true)
+                    setUpError()
                     handleError(status.error)
                 }
             }
@@ -118,8 +127,8 @@ internal class UserTwitterActivity : BaseActivity(), TweetListAdapter.OnClickIte
     }
 
     private fun configProgressView(visible: Boolean) {
-        showProgressView(visible)
         showEmptyView(false)
+        showProgressView(visible)
     }
 
     override fun onClickItem(tweet: TweetUI) {

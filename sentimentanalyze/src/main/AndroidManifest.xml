@@ -6,7 +6,9 @@
 
     <application
         android:theme="@style/Theme.TweetSentiment">
-        <activity android:label="@string/app_name_feature_analyze" android:name=".ui.SentimentAnalyzeActivity"/>
+        <activity android:label="@string/app_name_feature_analyze"
+            android:name=".ui.SentimentAnalyzeActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
