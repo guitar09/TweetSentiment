@@ -80,6 +80,11 @@ internal class UserTwitterActivity : BaseActivity(), TweetListAdapter.OnClickIte
         adapter.submitList(listOf())
     }
 
+    private fun setUpLoading() {
+        clearList()
+        configProgressView(true)
+    }
+
     private fun setUpError() {
         clearList()
         showEmptyView(true)
@@ -92,7 +97,7 @@ internal class UserTwitterActivity : BaseActivity(), TweetListAdapter.OnClickIte
 
             when (status) {
                 is LoadingState -> {
-                    configProgressView(true)
+                    setUpLoading()
                 }
 
                 is SucessState -> {

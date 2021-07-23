@@ -73,6 +73,7 @@ internal object UserTwitterActivityTestRobot {
             getSearchDialog().dialog?.findViewById<TextInputLayout>(R.id.inputSearchUserName)?.editText?.setText(userSearch)
             getSearchDialog().dialog?.findViewById<AppCompatButton>(R.id.btnSearch)?.performClick()
             executePendingTransactions()
+            callShadowOf()
         }
 
         fun clickTweetItemInRecyclerView() {
